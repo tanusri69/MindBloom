@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.mindbloom.ui.QuotesController">
+
+    <!-- Top: Controls -->
+    <top>
+        <VBox spacing="10" style="-fx-padding: 15; -fx-background-color: #ecf0f1;">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button fx:id="randomQuoteButton" text="🎲 Random Quote" prefWidth="130"
+                        style="-fx-font-size: 11; -fx-padding: 8;"/>
+                <Button fx:id="quoteOfDayButton" text="📅 Quote of Day" prefWidth="130"
+                        style="-fx-font-size: 11; -fx-padding: 8;"/>
+                <Button fx:id="favoritesButton" text="❤️ Favorites" prefWidth="100"
+                        style="-fx-font-size: 11; -fx-padding: 8;"/>
+                <Button fx:id="markFavoriteButton" text="⭐ Mark Favorite" prefWidth="130"
+                        style="-fx-font-size: 11; -fx-padding: 8;"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Category:" style="-fx-min-width: 80;"/>
+                <ComboBox fx:id="categoryCombo" prefWidth="200"
+                          promptText="Select category"/>
+                <Button fx:id="categoryQuoteButton" text="Get Quote" prefWidth="100"
+                        style="-fx-font-size: 11; -fx-padding: 8;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Center: Quote Display -->
+    <center>
+        <VBox spacing="10" style="-fx-padding: 15;">
+            <Label text="Quote"
+                   style="-fx-font-size: 13; -fx-font-weight: bold;"/>
+            <TextArea fx:id="quoteArea" wrapText="true" editable="false"
+                      prefHeight="300" style="-fx-font-family: serif; -fx-font-size: 14;
+                      -fx-padding: 15; -fx-control-inner-background: #fef9e7;"/>
+        </VBox>
+    </center>
+
+    <!-- Bottom: Status -->
+    <bottom>
+        <HBox style="-fx-padding: 10; -fx-background-color: #ecf0f1;">
+            <Label fx:id="statusLabel" text="Ready"
+                   style="-fx-text-fill: #34495e;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

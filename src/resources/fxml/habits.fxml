@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.mindbloom.ui.HabitsController">
+
+    <!-- Top: Input Section -->
+    <top>
+        <VBox spacing="10" style="-fx-padding: 15; -fx-background-color: #ecf0f1;">
+            <Label text="Add New Habit"
+                   style="-fx-font-size: 14; -fx-font-weight: bold;"/>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Habit Name:" style="-fx-min-width: 100;"/>
+                <TextField fx:id="habitNameField" prefWidth="300"
+                           promptText="e.g., Morning exercise, Read book"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Frequency:" style="-fx-min-width: 100;"/>
+                <ComboBox fx:id="frequencyCombo" prefWidth="150"
+                          promptText="Select frequency"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Button fx:id="addHabitButton" text="➕ Add Habit" prefWidth="120"
+                        style="-fx-font-size: 11; -fx-padding: 8;"/>
+                <Button fx:id="refreshButton" text="🔄 Refresh" prefWidth="100"
+                        style="-fx-font-size: 11; -fx-padding: 8;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Center: Habits List -->
+    <center>
+        <VBox spacing="10" style="-fx-padding: 15;">
+            <Label text="Your Habits"
+                   style="-fx-font-size: 13; -fx-font-weight: bold;"/>
+            <TableView fx:id="habitsTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn text="Habit" prefWidth="200" fx:id="habitColumn"/>
+                    <TableColumn text="Frequency" prefWidth="100" fx:id="frequencyColumn"/>
+                    <TableColumn text="Streak" prefWidth="80" fx:id="streakColumn"/>
+                    <TableColumn text="Last Completed" prefWidth="150" fx:id="lastCompletedColumn"/>
+                    <TableColumn text="Actions" prefWidth="100" fx:id="actionsColumn"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <!-- Bottom: Status -->
+    <bottom>
+        <HBox style="-fx-padding: 10; -fx-background-color: #ecf0f1;">
+            <Label fx:id="statusLabel" text="Ready"
+                   style="-fx-text-fill: #34495e;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<ScrollPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fitToWidth="true" fitToHeight="true">
+    <VBox spacing="15" style="-fx-padding: 20;">
+
+        <!-- Welcome Section -->
+        <VBox style="-fx-border-color: #3498db; -fx-border-radius: 5; -fx-padding: 15;
+                     -fx-background-color: #ecf0f1;">
+            <Label text="Welcome to MindBloom! 🌱"
+                   style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            <Label text="Track your mood, build better habits, and improve your mental health."
+                   style="-fx-font-size: 12; -fx-text-fill: #34495e;"/>
+        </VBox>
+
+        <!-- Quick Stats Section -->
+        <HBox spacing="20">
+            <VBox style="-fx-border-color: #27ae60; -fx-border-radius: 5; -fx-padding: 15;
+                         -fx-background-color: #e8f8f5; -fx-min-width: 200;">
+                <Label text="😊 Today's Mood" style="-fx-font-weight: bold; -fx-font-size: 12;"/>
+                <Label fx:id="todayMoodLabel" text="Not tracked yet"
+                       style="-fx-font-size: 14; -fx-text-fill: #27ae60;"/>
+            </VBox>
+
+            <VBox style="-fx-border-color: #e74c3c; -fx-border-radius: 5; -fx-padding: 15;
+                         -fx-background-color: #fadbd8; -fx-min-width: 200;">
+                <Label text="✅ Active Habits" style="-fx-font-weight: bold; -fx-font-size: 12;"/>
+                <Label fx:id="activeHabitsLabel" text="0 habits"
+                       style="-fx-font-size: 14; -fx-text-fill: #e74c3c;"/>
+            </VBox>
+
+            <VBox style="-fx-border-color: #9b59b6; -fx-border-radius: 5; -fx-padding: 15;
+                         -fx-background-color: #f4ecf7; -fx-min-width: 200;">
+                <Label text="💪 Current Streak" style="-fx-font-weight: bold; -fx-font-size: 12;"/>
+                <Label fx:id="streakLabel" text="0 days"
+                       style="-fx-font-size: 14; -fx-text-fill: #9b59b6;"/>
+            </VBox>
+        </HBox>
+
+        <!-- Recent Activities Section -->
+        <VBox style="-fx-border-color: #95a5a6; -fx-border-radius: 5; -fx-padding: 15;
+                     -fx-background-color: #f8f9fa;">
+            <Label text="Recent Activities" style="-fx-font-weight: bold; -fx-font-size: 13;"/>
+            <TextArea fx:id="recentActivitiesArea" wrapText="true" editable="false"
+                      prefHeight="150" style="-fx-font-family: monospace; -fx-font-size: 10;"/>
+        </VBox>
+
+        <!-- Motivational Quote Section -->
+        <VBox style="-fx-border-color: #f39c12; -fx-border-radius: 5; -fx-padding: 15;
+                     -fx-background-color: #fef5e7;">
+            <Label text="💬 Quote of the Day" style="-fx-font-weight: bold; -fx-font-size: 13;"/>
+            <TextArea fx:id="quoteOfDayArea" wrapText="true" editable="false"
+                      prefHeight="100" style="-fx-font-family: serif; -fx-font-size: 11;"/>
+        </VBox>
+
+        <Region VBox.vgrow="ALWAYS"/>
+    </VBox>
+</ScrollPane>
